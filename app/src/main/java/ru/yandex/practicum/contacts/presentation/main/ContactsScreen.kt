@@ -136,7 +136,6 @@ fun ContactsScreen(
             selectedApps = viewModel.selectedMessagingApps,
             onAppsSelected = { apps ->
                 viewModel.updateSelectedMessagingApps(apps)
-                showFilterBottomSheet = false
             },
             onDismiss = { showFilterBottomSheet = false }
         )
@@ -147,7 +146,6 @@ fun ContactsScreen(
             selectedCodes = viewModel.selectedCountryCodes,
             onCodesSelected = { codes ->
                 viewModel.updateSelectedCountryCodes(codes)
-                showCountryCodeBottomSheet = false
             },
             onDismiss = { showCountryCodeBottomSheet = false }
         )
