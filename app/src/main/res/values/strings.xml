@@ -6,28 +6,13 @@
     <string name="menu_search">Поиск</string>
     <string name="menu_country">Код страны</string>
 
-    <string name="nothing_found">Ничего не нашлось</string>
-    <string name="go_to_settings">Перейти в настройки</string>
     <string name="close">Закрыть</string>
 
-    <string name="reset">Сбросить</string>
-    <string name="apply">Применить</string>
-
     <string name="sort_by_default">Отсортировать по</string>
-
-    <string name="filter_contact_type_all">Выбрать все</string>
-    <string name="filter_contact_type_telegram">Telegram</string>
-    <string name="filter_contact_type_whatsapp">WhatsApp</string>
-    <string name="filter_contact_type_viber">Viber</string>
-    <string name="filter_contact_type_signal">Signal</string>
-    <string name="filter_contact_type_threema">Threema</string>
-    <string name="filter_contact_type_phone">Номер телефона</string>
-    <string name="filter_contact_type_email">E-mail</string>
 
     <string name="filter_by_country_code">Фильтр по коду страны</string>
     <string name="filter_by_messaging_app">Фильтр по приложению</string>
 
-
-    <string name="permission_required_message">Чтобы отобразить контакты, необходим доступ к списку контактов на устройстве</string>"
-    <string name="ask_permission_button">Разрешить доступ</string>"
+    <string name="permission_required_message">Чтобы отобразить контакты, необходим доступ к списку контактов на устройстве</string>
+    <string name="ask_permission_button">Разрешить доступ</string>
 </resources>

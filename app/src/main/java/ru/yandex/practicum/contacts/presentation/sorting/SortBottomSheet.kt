@@ -27,14 +27,13 @@ fun SortBottomSheet(
         items = SortOrder.entries,
         selectedItems = setOf(currentSortOrder),
         onItemsSelected = { selected ->
-            selected.firstOrNull()?.let { onSortOrderSelected(it) }
+            onSortOrderSelected(selected.firstOrNull { it != currentSortOrder } ?: currentSortOrder)
         },
         onDismiss = onDismiss
     ) { sortOrder, isSelected ->
         SortOrderOption(
             isSelected = isSelected,
-            sortOrder = sortOrder,
-            onSortOrderSelected = onSortOrderSelected
+            sortOrder = sortOrder
         )
     }
 }
@@ -42,8 +41,7 @@ fun SortBottomSheet(
 @Composable
 private fun SortOrderOption(
     isSelected: Boolean,
-    sortOrder: SortOrder,
-    onSortOrderSelected: (SortOrder) -> Unit
+    sortOrder: SortOrder
 ) {
     Row(
         modifier = Modifier
@@ -53,7 +51,7 @@ private fun SortOrderOption(
     ) {
         Checkbox(
             checked = isSelected,
-            onCheckedChange = { onSortOrderSelected(sortOrder) }
+            onCheckedChange = null
         )
         Spacer(modifier = Modifier.width(16.dp))
         Text(

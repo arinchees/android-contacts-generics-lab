@@ -2,6 +2,7 @@ package ru.yandex.practicum.contacts.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
+import android.view.Window
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -27,6 +28,13 @@ private val LightColorScheme = lightColorScheme(
     tertiary = Pink40
 )
 
+@Suppress("DEPRECATION")
+private fun setLegacyStatusBarColor(window: Window, color: Int) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+        window.statusBarColor = color
+    }
+}
+
 @Composable
 fun ContactsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -45,7 +53,7 @@ fun ContactsTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
+            setLegacyStatusBarColor(window, colorScheme.primary.toArgb())
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
         }
     }
@@ -55,4 +63,4 @@ fun ContactsTheme(
         typography = Typography,
         content = content
     )
-} 
+}

@@ -33,9 +33,7 @@ fun CountryCodeBottomSheet(
     ) { countryCode, isSelected ->
         CountryCodeOption(
             isSelected = isSelected,
-            countryCode = countryCode,
-            selectedCodes = selectedCodes,
-            onCodesSelected = onCodesSelected
+            countryCode = countryCode
         )
     }
 }
@@ -43,9 +41,7 @@ fun CountryCodeBottomSheet(
 @Composable
 private fun CountryCodeOption(
     isSelected: Boolean,
-    countryCode: CountryCode,
-    selectedCodes: Set<CountryCode>,
-    onCodesSelected: (Set<CountryCode>) -> Unit
+    countryCode: CountryCode
 ) {
     Row(
         modifier = Modifier
@@ -55,15 +51,7 @@ private fun CountryCodeOption(
     ) {
         Checkbox(
             checked = isSelected,
-            onCheckedChange = { checked ->
-                val newSelection = selectedCodes.toMutableSet()
-                if (checked) {
-                    newSelection.add(countryCode)
-                } else {
-                    newSelection.remove(countryCode)
-                }
-                onCodesSelected(newSelection)
-            }
+            onCheckedChange = null
         )
         Spacer(modifier = Modifier.width(16.dp))
         Column {
